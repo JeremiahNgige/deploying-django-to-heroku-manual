@@ -25,6 +25,9 @@ Its available on [github](https://github.com/jakhax/comicon-gallery.git) so you 
 * You have django application that you want to deploy to heroku
 * You are familiar with virtual environments - not a must but the knowledge would be a plus
 * Your deployment db is postgres
+### tested django versions
+* django 1.11
+* django 2.0.7
 
 We need to add the following to our project, we will cover each of them in detail in the below section
 
