@@ -1,15 +1,25 @@
 How to Deploy Django Applications on Heroku
 ===========================================
 
-# Install heroku CLI
-[Sign up](https://signup.heroku.com/) to Heroku.
+## Table Of Contents
+- [Assumptions](#assumptions)
+- (Installing Heroku CLI)[#installing-heroku-cli]
+- Setup
+    - [Virtual environment](#virtual-environement)
+    - [Procfile for heroku](#create-a-procfile)
+    - [Using enviromennt variables and why we use them](#environment-variables)
+- [Database settings](#database-settings)
+- [Static and media files](#static-and-media-files)
+- [Specifying a python runtime](#specifying-your-python-runtime)
+- [Creating Heroku App and Deploying Django Project](#creating-heroku-app-and-deploying-django-project)
+    - [Adding Configurations to your Heroku app](#adding-configurations-to-your-heroku-app)
+    - [Pushing Project To Heroku](#pushing-project-to-heroku)
+    - [Migrating The Database]("database-migrations)
+    - [Deploying Local Postgres To Heroku]("pushing-local-postgres-database-to-heroku")
+    - [Running tests on heroku](#confirming-that-tests-run-on-heroku)
+- [Debbing Deployment Errors and Common issues](#why-am-i-getting-errors)
 
-Then install the [Heroku Toolbelt](https://toolbelt.heroku.com/). It is a command line tool to manage your Heroku apps
 
-After installing the Heroku Toolbelt, open a terminal and login to your account:
-```bash
-$ heroku login
-```
 
 ## Assumptions
 * You have a django project that you want to deploy.
@@ -19,6 +29,17 @@ $ heroku login
 ### Tested django versions
 * django 1.11
 * django 2.2
+
+## Install heroku CLI
+[Sign up](https://signup.heroku.com/) to Heroku.
+
+Then install the [Heroku Toolbelt](https://toolbelt.heroku.com/). It is a command line tool to manage your Heroku apps
+
+After installing the Heroku Toolbelt, open a terminal and login to your account:
+```bash
+$ heroku login
+```
+
 
 We need to add the following to our project, we will cover each of them in detail in the below section
 
@@ -53,7 +74,7 @@ pip install django
 ```
 ### Setup
 
-### Create a  Procfile
+### Create a Procfile
 Heroku apps include a `Procfile` that specifies the commands that are executed by the app’s dynos. 
 
 For more information read on the [heroku documentation](https://devcenter.heroku.com/articles/procfile).
@@ -71,12 +92,15 @@ web: gunicorn your_project_name.wsgi --log-file -
 
 ### Settings
 - First thing we want to do is to move our settings to a `.env` 
-- If you dont get why we use environment variables may be this can explain.
 
-### Why environment variables()
+
+### Environment Variables
+- If you dont get why we use environment variables may be this can explain.
+#### Why environment variables
 - The primary use case for environment variables is to limit the need to modify and re-release an application due to changes in configuration data.
 - Modifying and releasing application code is relatively complicated and increases the risk of introducing undesirable side effects into production.
 
+#### using .env
 - Create a `.env` file at the root of your project.
 - Next lets install libary that will enable us to easily read environment variables
 ```bash
@@ -191,7 +215,7 @@ python-3.6.8
 - You can find a list of supported python runtimes on heroku here, [Heroku Python Runtimes](https://devcenter.heroku.com/articles/python-runtimes).
 
 
-# Creating Heroku App and Deploying Django Project.
+## Creating Heroku App and Deploying Django Project.
 
 - At the root directory of your project(where there's `manage.py`)
 
@@ -223,7 +247,7 @@ DATABASE_URL='generated database url, dont add this'
 
 <img src="https://i.imgur.com/2Wi41Vq.png" alt="Heroku dashboard" width="400" height="300">
 
-#### Via heroku CLI
+#### Via Heroku CLI
 - Alternatively you can use the heroku cli to set environment variabes, example to set the `SECRET_KEY`
 ```bash
 heroku config:set SECRET_KEY=supersecretkey
@@ -256,7 +280,7 @@ heroku pg:push mylocaldb DATABASE_URI --app yourappname
 ```
 - Where `mylocaldb` is the database url to your local database, same as the one in your local `.env` or your database name if you are running postgres on your machine bare metal.
 
-### confirming that tests run on heroku
+### Confirming that tests run on heroku
 ```bash
 heroku run python manage.py test
 ```
