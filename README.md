@@ -3,9 +3,9 @@ How to Deploy Django Applications on Heroku
 
 ## Table Of Contents
 - [Assumptions](#assumptions)
-- (Installing Heroku CLI)[#installing-heroku-cli]
 - Setup
-    - [Virtual environment](#virtual-environement)
+    - [Installing Heroku CLI](#installing-heroku-cli)
+    - [Virtual environment](#virtual-environment)
     - [Procfile for heroku](#create-a-procfile)
     - [Using enviromennt variables and why we use them](#environment-variables)
 - [Database settings](#database-settings)
@@ -30,19 +30,6 @@ How to Deploy Django Applications on Heroku
 * django 1.11
 * django 2.2
 
-## Install heroku CLI
-[Sign up](https://signup.heroku.com/) to Heroku.
-
-Then install the [Heroku Toolbelt](https://toolbelt.heroku.com/). It is a command line tool to manage your Heroku apps
-
-After installing the Heroku Toolbelt, open a terminal and login to your account:
-```bash
-$ heroku login
-```
-
-
-We need to add the following to our project, we will cover each of them in detail in the below section
-
 ## Checklist
 - [ ] Procfile.
 - [ ] Add settings to .env file.
@@ -53,13 +40,16 @@ We need to add the following to our project, we will cover each of them in detai
 - [ ] Create heroku app and a postgres instance.
 - [ ] Deploy.
 
-* Add a `Procfile` in the project root;
-* Add `requirements.txt` file with all the requirements in the project root;
-* Add `Gunicorn` to `requirements.txt`;
-* A `runtime.txt` to specify the correct Python version in the project root;
-* Configure `whitenoise` to serve static files.
+## Setup
+### Install heroku CLI
+Create An account on heroku if you dont have one, [Sign up](https://signup.heroku.com/).
 
-## Getting Started
+Then install the [Heroku Toolbelt](https://toolbelt.heroku.com/). It is a command line tool to manage your Heroku apps
+
+After installing the Heroku Toolbelt, open a terminal and login to your account:
+```bash
+$ heroku login
+```
 
 ### Virtual environment
 - You'll need to be working on a virtual environment
@@ -72,7 +62,6 @@ source virtual/bin/activate
 ```bash
 pip install django
 ```
-### Setup
 
 ### Create a Procfile
 Heroku apps include a `Procfile` that specifies the commands that are executed by the app’s dynos. 
