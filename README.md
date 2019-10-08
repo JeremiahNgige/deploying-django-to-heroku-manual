@@ -15,7 +15,7 @@ How to Deploy Django Applications on Heroku
     - [Adding Configurations to your Heroku app](#adding-configurations-to-your-heroku-app)
     - [Pushing Project To Heroku](#pushing-project-to-heroku)
     - [Migrating The Database]("database-migrations)
-    - [Deploying Local Postgres To Heroku]("pushing-local-postgres-database-to-heroku")
+    - [Deploying Local Postgres To Heroku](#pushing-local-postgres-database-to-heroku)
     - [Running tests on heroku](#confirming-that-tests-run-on-heroku)
 - [Debbing Deployment Errors and Common issues](#why-am-i-getting-errors)
 
