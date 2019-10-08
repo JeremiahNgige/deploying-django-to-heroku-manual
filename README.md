@@ -234,7 +234,7 @@ DATABASE_URL='generated database url, dont add this'
 
 #### Via the Dashboard
 - Log in to your [heroku dashboard](https://dashboard.heroku.com/apps), select your app and  go to the settings tab. Click on the Settings menu and then on the button Reveal Config Vars:
-- Next add all the environment vaiables, by default you should have `DATABASE_URI` configuration created after installing postgres to heroku.
+- Next add all the environment variables, by default you should have `DATABASE_URI` configuration created after installing postgres to heroku.
 - The environment variables to add are the same as the ones in your `.env` file, picture below shows an example:
 
 <img src="https://i.imgur.com/2Wi41Vq.png" alt="Heroku dashboard" width="400" height="300">
