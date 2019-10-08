@@ -2,6 +2,7 @@ How to Deploy Django Applications on Heroku
 ===========================================
 - This a detailed documentation on deploying `Django+Postgres` project on heroku(free tier).
 - You can skip sections that you dont need, use the table of contents below.
+- Contributions are welcomed, from spelling mistakes to new/better ways/features, see [contributing](#contributing) section.
 ## Table Of Contents
 - [Assumptions](#assumptions)
 - [Setup](#setup)
