@@ -1,9 +1,10 @@
 How to Deploy Django Applications on Heroku
 ===========================================
-
+- This a detailed documentation on deploying `Django+Postgres` project on heroku(free tier).
+- You can skip sections that you dont need, use the table of contents below.
 ## Table Of Contents
 - [Assumptions](#assumptions)
-- Setup
+- [Setup](#setup)
     - [Installing Heroku CLI](#install-heroku-cli)
     - [Virtual environment](#virtual-environment)
     - [Procfile for heroku](#create-a-procfile)
@@ -18,7 +19,8 @@ How to Deploy Django Applications on Heroku
     - [Deploying Local Postgres To Heroku](#pushing-local-postgres-database-to-heroku)
     - [Running tests on heroku](#confirming-that-tests-run-on-heroku)
 - [Debbing Deployment Errors and Common issues](#why-am-i-getting-errors)
-
+- [Contributing](#contributing)
+- [Resources](#resources)
 
 
 ## Assumptions
