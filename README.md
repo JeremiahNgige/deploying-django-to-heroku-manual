@@ -4,7 +4,7 @@ How to Deploy Django Applications on Heroku
 ## Table Of Contents
 - [Assumptions](#assumptions)
 - Setup
-    - [Installing Heroku CLI](#installing-heroku-cli)
+    - [Installing Heroku CLI](#install-heroku-cli)
     - [Virtual environment](#virtual-environment)
     - [Procfile for heroku](#create-a-procfile)
     - [Using enviromennt variables and why we use them](#environment-variables)
